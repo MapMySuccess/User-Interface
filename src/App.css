@@ -1,105 +1,94 @@
-/* Ensure the body and html take full height and remove default margin/padding */
+/* Reset body margins and paddings */
 body, html {
   margin: 0;
   padding: 0;
+  font-family: Arial, sans-serif;
   height: 100%;
-  width: 100%;
+  overflow: hidden; /* Prevents scrolling */
 }
 
-/* Content section to avoid navbar overlap */
-.content {
-  padding-top: 60px; /* Adjust based on navbar height */
+/* App container to include navbar and content */
+.app-container {
   display: flex;
-  justify-content: space-between;
-  height: calc(100vh - 60px); /* Full height minus navbar height */
+  flex-direction: column;
+  height: 100vh;
 }
 
-/* Sidebar for suggestions on the left */
+/* Navbar styling */
+.navbar {
+  width: 100%;
+  padding: 15px 20px;
+  background-color: #0e6538; /* Dark blue-gray */
+  color: #ffffff; /* White text */
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+  display: flex;
+  align-items: center;
+}
+
+.navbar h1 {
+  margin: 0;
+  font-size: 1.5em;
+  font-weight: bold;
+}
+
+/* Content section to arrange sidebar and map side by side */
+.content {
+  display: flex;
+  flex: 1;
+}
+
+/* Sidebar styling */
 .sidebar {
-  width: 30%; /* Sidebar takes up the left 50% */
-  height: 100%;
-  background-color: #f4f4f4;
+  width: 30%; /* Adjusts sidebar width */
   padding: 20px;
+  background-color: #f4f4f4;
+  box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1); /* Adds a shadow to the right */
   overflow-y: auto;
+  padding-top: 20px; /* Add padding at the top to lower text */
 }
 
-/* Map container with 50% width on the right */
+.sidebar h3 {
+  font-size: 1.2em;
+  margin: 0 0 10px;
+  color: #333;
+}
+
+.sidebar p {
+  margin: 5px 0;
+  font-size: 0.9em;
+  color: #555;
+}
+
+.sidebar h4 {
+  margin-top: 20px;
+  color: #333;
+  font-weight: bold;
+}
+
+.sidebar strong {
+  color: #10a834; /* Success rate color (green) */
+}
+
+/* Map container styling */
 .map-container {
-  width: 70%; /* Map takes up the right 50% */
+  width: 70%; /* Adjusts map container width */
   height: 100%;
-  display: flex; /* Ensure it takes all available space */
+  display: flex;
 }
 
-/* Specific style for the map to ensure it takes full width/height of its container */
 #map {
   width: 100%; /* Make the map take the full width of the map-container */
   height: 100%; /* Make the map take the full height of the map-container */
 }
 
-/* Navbar styles */
-.navbar {
-  background-color: #333;
-  color: white;
-  padding: 10px 0;
-  position: fixed;
-  top: 0;
-  width: 100%;
-  z-index: 1000; /* Ensures the navbar stays on top */
-}
-
-.navbar-container {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 0 20px;
-}
-
-.navbar-logo h1 {
-  font-size: 24px;
-  margin: 0;
-}
-
-.navbar-links {
-  display: flex;
-}
-
-.navbar-links a {
-  color: white;
-  text-decoration: none;
-  margin-left: 20px;
-  font-size: 18px;
-}
-
-.navbar-links a:hover {
-  color: #ddd;
-}
-
-/* For responsiveness */
+/* Optional styling for responsiveness on small screens */
 @media (max-width: 768px) {
-  .navbar-container {
-    flex-direction: column;
-    align-items: center;
-  }
-
-  .navbar-links {
-    flex-direction: column;
-    align-items: center;
-  }
-
-  .navbar-links a {
-    margin: 10px 0;
-  }
-
-  /* Stack map and sidebar vertically on small screens */
   .content {
     flex-direction: column;
   }
 
-  .map-container, .sidebar {
-    width: 100%; /* Both map and sidebar take full width on small screens */
+  .sidebar, .map-container {
+    width: 100%; /* Both take full width on small screens */
+    height: 50vh; /* Each takes half the screen height */
   }
 }
-
-
-  
-  

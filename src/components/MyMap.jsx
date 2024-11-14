@@ -8,8 +8,8 @@ const containerStyle = {
 };
 
 const center = {
-  lat: 37.7749, // Example latitude (San Francisco)
-  lng: -122.4194, // Example longitude
+  lat: 9.9312, // Example latitude (San Francisco)
+  lng: 76.2673, // Example longitude
 };
 
 function MyMap() {
