@@ -4,7 +4,7 @@ import { GoogleMap, LoadScript, Marker } from '@react-google-maps/api';
 // Define the default center of the map and its zoom level
 const containerStyle = {
   width: '100%',
-  height: '400px',
+  height: '100%',
 };
 
 const center = {

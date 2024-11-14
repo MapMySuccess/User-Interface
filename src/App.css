@@ -1,0 +1,105 @@
+/* Ensure the body and html take full height and remove default margin/padding */
+body, html {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  width: 100%;
+}
+
+/* Content section to avoid navbar overlap */
+.content {
+  padding-top: 60px; /* Adjust based on navbar height */
+  display: flex;
+  justify-content: space-between;
+  height: calc(100vh - 60px); /* Full height minus navbar height */
+}
+
+/* Sidebar for suggestions on the left */
+.sidebar {
+  width: 30%; /* Sidebar takes up the left 50% */
+  height: 100%;
+  background-color: #f4f4f4;
+  padding: 20px;
+  overflow-y: auto;
+}
+
+/* Map container with 50% width on the right */
+.map-container {
+  width: 70%; /* Map takes up the right 50% */
+  height: 100%;
+  display: flex; /* Ensure it takes all available space */
+}
+
+/* Specific style for the map to ensure it takes full width/height of its container */
+#map {
+  width: 100%; /* Make the map take the full width of the map-container */
+  height: 100%; /* Make the map take the full height of the map-container */
+}
+
+/* Navbar styles */
+.navbar {
+  background-color: #333;
+  color: white;
+  padding: 10px 0;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 1000; /* Ensures the navbar stays on top */
+}
+
+.navbar-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 20px;
+}
+
+.navbar-logo h1 {
+  font-size: 24px;
+  margin: 0;
+}
+
+.navbar-links {
+  display: flex;
+}
+
+.navbar-links a {
+  color: white;
+  text-decoration: none;
+  margin-left: 20px;
+  font-size: 18px;
+}
+
+.navbar-links a:hover {
+  color: #ddd;
+}
+
+/* For responsiveness */
+@media (max-width: 768px) {
+  .navbar-container {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .navbar-links {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .navbar-links a {
+    margin: 10px 0;
+  }
+
+  /* Stack map and sidebar vertically on small screens */
+  .content {
+    flex-direction: column;
+  }
+
+  .map-container, .sidebar {
+    width: 100%; /* Both map and sidebar take full width on small screens */
+  }
+}
+
+
+  
+  
